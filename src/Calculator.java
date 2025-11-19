@@ -11,7 +11,40 @@ import javax.swing.JTextField;
 
 public class Calculator {
 }
-this.panel.add(this.piButton);
+        this.functionButtons[7] = this.clrButton;
+        this.functionButtons[8] = this.negButton;
+        this.functionButtons[9] = this.cosButton;
+        this.functionButtons[10] = this.sinButton;
+        this.functionButtons[11] = this.tanButton;
+        this.functionButtons[12] = this.logButton;
+        this.functionButtons[13] = this.piButton;
+        this.functionButtons[14] = this.sqrtButton;
+        this.functionButtons[15] = this.powButton;
+        Color purpleColor = new Color(128, 0, 128);
+
+             for(int i = 0; i < 16; ++i) {
+            this.functionButtons[i].addActionListener(this);
+            this.functionButtons[i].setFont(this.myFont);
+            this.functionButtons[i].setFocusable(false);
+            this.functionButtons[i].setBackground(purpleColor);
+            this.functionButtons[i].setForeground(Color.WHITE);
+        }
+
+                for(int i = 0; i < 10; ++i) {
+        this.numberButtons[i] = new JButton(String.valueOf(i));
+        this.numberButtons[i].addActionListener(this);
+            this.numberButtons[i].setFont(this.myFont);
+            this.numberButtons[i].setFocusable(false);
+        }
+                this.panel = new JPanel();
+        this.panel.setBounds(20, 80, 395, 400);
+        this.panel.setLayout(new GridLayout(5, 5, 10, 10));
+        this.panel.setBackground(Color.LIGHT_GRAY);
+        this.panel.add(this.sinButton);
+        this.panel.add(this.cosButton);
+        this.panel.add(this.tanButton);
+        this.panel.add(this.logButton);
+        this.panel.add(this.piButton);
         this.panel.add(this.sqrtButton);
         this.panel.add(this.powButton);
         this.panel.add(this.delButton);
