@@ -81,3 +81,34 @@ if (e.getSource() == this.equButton) {
         this.textfield.setText("Error");
             }
                     }//
+Calculator() {
+    this.frame.setDefaultCloseOperation(3);
+    this.frame.setSize(450, 600);
+    this.frame.setLayout((LayoutManager)null);
+    this.textfield = new JTextField();
+    this.textfield.setBounds(20, 20, 395, 50);
+    this.textfield.setFont(this.myFont);
+    this.textfield.setEditable(false);
+    this.addButton = new JButton("+");
+    this.subButton = new JButton("-");
+    this.mulButton = new JButton("*");
+    this.divButton = new JButton("/");
+    this.decButton = new JButton(".");
+    this.equButton = new JButton("=");
+    this.delButton = new JButton("Del");
+    this.clrButton = new JButton("Clr");
+    this.negButton = new JButton("(-)");
+    this.cosButton = new JButton("cos");
+    this.sinButton = new JButton("sin");
+    this.tanButton = new JButton("tan");
+    this.logButton = new JButton("log");
+    this.piButton = new JButton("π");
+    this.sqrtButton = new JButton("sqrt");
+    this.powButton = new JButton("^");
+    this.functionButtons[0] = this.addButton;
+    this.functionButtons[1] = this.subButton;
+    this.functionButtons[2] = this.mulButton;
+    this.functionButtons[3] = this.divButton;
+    this.functionButtons[4] = this.decButton;
+    this.functionButtons[5] = this.equButton;
+    this.functionButtons[6] = this.delButton; //
