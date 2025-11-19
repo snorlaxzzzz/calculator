@@ -11,6 +11,40 @@ import javax.swing.JTextField;
 
 public class Calculator {
 }
+this.panel.add(this.piButton);
+        this.panel.add(this.sqrtButton);
+        this.panel.add(this.powButton);
+        this.panel.add(this.delButton);
+        this.panel.add(this.clrButton);
+        this.panel.add(this.divButton);
+        this.panel.add(this.numberButtons[7]);
+        this.panel.add(this.numberButtons[8]);
+        this.panel.add(this.numberButtons[9]);
+        this.panel.add(this.mulButton);
+        this.panel.add(this.negButton);
+        this.panel.add(this.numberButtons[4]);
+        this.panel.add(this.numberButtons[5]);
+        this.panel.add(this.numberButtons[6]);
+        this.panel.add(this.subButton);
+        this.panel.add(this.addButton);
+        this.panel.add(this.numberButtons[0]);
+        this.panel.add(this.numberButtons[1]);
+        this.panel.add(this.numberButtons[2]);
+        this.panel.add(this.numberButtons[3]);
+        this.panel.add(this.decButton);
+        this.frame.add(this.panel);
+        this.frame.add(this.textfield);
+        this.equButton.setBounds(20, 490, 395, 50);
+        this.frame.add(this.equButton);
+        this.frame.setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        for(int i = 0; i < 10; ++i) {
+            if (e.getSource() == this.numberButtons[i]) {
+                this.textfield.setText(this.textfield.getText().concat(String.valueOf(i)));
+            }
+        }
  if (e.getSource() == this.piButton) {
         this.textfield.setText(String.valueOf(Math.PI));
         }
@@ -80,4 +114,5 @@ if (e.getSource() == this.equButton) {
             } catch (ArithmeticException var9) {
         this.textfield.setText("Error");
             }
+
                     }//
