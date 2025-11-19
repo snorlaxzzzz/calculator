@@ -9,6 +9,35 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
+public class Calculator implements ActionListener {
+    JFrame frame = new JFrame("Scientific Calculator");
+    JTextField textfield;
+    JButton[] numberButtons = new JButton[10];
+    JButton[] functionButtons = new JButton[16];
+    JButton addButton;
+    JButton subButton;
+    JButton mulButton;
+    JButton divButton;
+    JButton decButton;
+    JButton equButton;
+    JButton delButton;
+    JButton clrButton;
+    JButton negButton;
+    JButton cosButton;
+    JButton sinButton;
+    JButton tanButton;
+    JButton logButton;
+    JButton piButton;
+    JButton sqrtButton;
+    JButton powButton;
+    JPanel panel;
+    Font myFont = new Font("Ink Free", 1, 20);
+    double num1 = (double)0.0F;
+    double num2 = (double)0.0F;
+    double result = (double)0.0F;
+    char operator;//
+
 public class Calculator {
 }
         this.functionButtons[7] = this.clrButton;
