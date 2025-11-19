@@ -207,5 +207,40 @@ if (e.getSource() == this.equButton) {
             } catch (ArithmeticException var9) {
         this.textfield.setText("Error");
             }
+                    }//
+
+                    if (e.getSource() == this.decButton) {
+        this.textfield.setText(this.textfield.getText().concat("."));
+        }
+
+        if (e.getSource() == this.addButton) {
+        this.num1 = Double.parseDouble(this.textfield.getText());
+        this.operator = '+';
+        this.textfield.setText("");
+        }
+
+                if (e.getSource() == this.subButton) {
+        this.num1 = Double.parseDouble(this.textfield.getText());
+        this.operator = '-';
+        this.textfield.setText("");
+        }
+
+                if (e.getSource() == this.mulButton) {
+        this.num1 = Double.parseDouble(this.textfield.getText());
+        this.operator = '*';
+        this.textfield.setText("");
+        }
+
+                if (e.getSource() == this.divButton) {
+        this.num1 = Double.parseDouble(this.textfield.getText());
+        this.operator = '/';
+        this.textfield.setText("");
+        }
+
+                if (e.getSource() == this.powButton) {
+        this.num1 = Double.parseDouble(this.textfield.getText());
+        this.operator = '^';
+        this.textfield.setText("");
+        }
 
                     }//
