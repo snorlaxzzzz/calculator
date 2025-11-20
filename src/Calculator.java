@@ -8,40 +8,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-Calculator() {
-    this.frame.setDefaultCloseOperation(3);
-    this.frame.setSize(450, 600);
-    this.frame.setLayout((LayoutManager)null);
-    this.textfield = new JTextField();
-    this.textfield.setBounds(20, 20, 395, 50);
-    this.textfield.setFont(this.myFont);
-    this.textfield.setEditable(false);
-    this.addButton = new JButton("+");
-    this.subButton = new JButton("-");
-    this.mulButton = new JButton("*");
-    this.divButton = new JButton("/");
-    this.decButton = new JButton(".");
-    this.equButton = new JButton("=");
-    this.delButton = new JButton("Del");
-    this.clrButton = new JButton("Clr");
-    this.negButton = new JButton("(-)");
-    this.cosButton = new JButton("cos");
-    this.sinButton = new JButton("sin");
-    this.tanButton = new JButton("tan");
-    this.logButton = new JButton("log");
-    this.piButton = new JButton("π");
-    this.sqrtButton = new JButton("sqrt");
-    this.powButton = new JButton("^");
-    this.functionButtons[0] = this.addButton;
-    this.functionButtons[1] = this.subButton;
-    this.functionButtons[2] = this.mulButton;
-    this.functionButtons[3] = this.divButton;
-    this.functionButtons[4] = this.decButton;
-    this.functionButtons[5] = this.equButton;
-    this.functionButtons[6] = this.delButton; //
 
-
-public class Calculator implements ActionListener {
+    public class Calculator implements ActionListener {
     JFrame frame = new JFrame("Scientific Calculator");
     JTextField textfield;
     JButton[] numberButtons = new JButton[10];
@@ -67,19 +35,48 @@ public class Calculator implements ActionListener {
     double num1 = (double)0.0F;
     double num2 = (double)0.0F;
     double result = (double)0.0F;
-    char operator;//
+    char operator;
 
-public class Calculator {
-}
-        this.functionButtons[7] = this.clrButton;
-        this.functionButtons[8] = this.negButton;
-        this.functionButtons[9] = this.cosButton;
-        this.functionButtons[10] = this.sinButton;
-        this.functionButtons[11] = this.tanButton;
-        this.functionButtons[12] = this.logButton;
-        this.functionButtons[13] = this.piButton;
-        this.functionButtons[14] = this.sqrtButton;
-        this.functionButtons[15] = this.powButton;
+    Calculator() {
+    this.frame.setDefaultCloseOperation(3);
+    this.frame.setSize(450, 600);
+    this.frame.setLayout((LayoutManager)null);
+    this.textfield = new JTextField();
+    this.textfield.setBounds(20, 20, 395, 50);
+    this.textfield.setFont(this.myFont);
+    this.textfield.setEditable(false);
+    this.addButton = new JButton("+");
+    this.subButton = new JButton("-");
+    this.mulButton = new JButton("*");
+    this.divButton = new JButton("/");
+    this.decButton = new JButton(".");
+    this.equButton = new JButton("=");
+    this.delButton = new JButton("Del");
+    this.clrButton = new JButton("Clr");
+    this.negButton = new JButton("(-)");
+    this.cosButton = new JButton("cos");
+    this.sinButton = new JButton("sin");
+    this.tanButton = new JButton("tan");
+    this.logButton = new JButton("log");
+    this.piButton = new JButton("pi");
+    this.sqrtButton = new JButton("sqrt");
+    this.powButton = new JButton("^");
+    this.functionButtons[0] = this.addButton;
+    this.functionButtons[1] = this.subButton;
+    this.functionButtons[2] = this.mulButton;
+    this.functionButtons[3] = this.divButton;
+    this.functionButtons[4] = this.decButton;
+    this.functionButtons[5] = this.equButton;
+    this.functionButtons[6] = this.delButton;
+    this.functionButtons[7] = this.clrButton;
+    this.functionButtons[8] = this.negButton;
+    this.functionButtons[9] = this.cosButton;
+    this.functionButtons[10] = this.sinButton;
+    this.functionButtons[11] = this.tanButton;
+    this.functionButtons[12] = this.logButton;
+    this.functionButtons[13] = this.piButton;
+    this.functionButtons[14] = this.sqrtButton;
+    this.functionButtons[15] = this.powButton;
         Color purpleColor = new Color(128, 0, 128);
 
              for(int i = 0; i < 16; ++i) {
@@ -138,46 +135,81 @@ public class Calculator {
                 this.textfield.setText(this.textfield.getText().concat(String.valueOf(i)));
             }
         }
- if (e.getSource() == this.piButton) {
+        if (e.getSource() == this.piButton) {
         this.textfield.setText(String.valueOf(Math.PI));
         }
 
         if (e.getSource() == this.cosButton || e.getSource() == this.sinButton || e.getSource() == this.tanButton || e.getSource() == this.logButton || e.getSource() == this.sqrtButton) {
-        try {
-double num = Double.parseDouble(this.textfield.getText());
-double result = (double)0.0F;
-String command = e.getActionCommand();
+            try {
+                double num = Double.parseDouble(this.textfield.getText());
+                double result = (double)0.0F;
+                String command = e.getActionCommand();
                 if (command.equals("cos")) {
-result = Math.cos(Math.toRadians(num));
-        } else if (command.equals("sin")) {
-result = Math.sin(Math.toRadians(num));
-        } else if (command.equals("tan")) {
-result = Math.tan(Math.toRadians(num));
-        } else if (command.equals("log")) {
-        if (!(num > (double)0.0F)) {
-        this.textfield.setText("Error (Log Domain)");
+                    result = Math.cos(Math.toRadians(num));
+                } else if (command.equals("sin")) {
+                    result = Math.sin(Math.toRadians(num));
+                } else if (command.equals("tan")) {
+                    result = Math.tan(Math.toRadians(num));
+                } else if (command.equals("log")) {
+                    if (!(num > (double)0.0F)) {
+                        this.textfield.setText("Error (Log Domain)");
                         return;
-                                }
+                        }
 
-result = Math.log10(num);
+                    result = Math.log10(num);
                 } else if (command.equals("sqrt")) {
-        if (!(num >= (double)0.0F)) {
-        this.textfield.setText("Error negative root");
+                    if (!(num >= (double)0.0F)) {
+                        this.textfield.setText("Error negative root");
                         return;
-                                }
+                    }
 
-result = Math.sqrt(num);
+                    result = Math.sqrt(num);
                 }
 
-                        this.textfield.setText(String.valueOf(result));
-        } catch (NumberFormatException var10) {
-        this.textfield.setText("Error");
+                    this.textfield.setText(String.valueOf(result));
+                } catch (NumberFormatException var10) {
+                    this.textfield.setText("Error");
+                }
             }
-                    }//
+            if (e.getSource() == this.decButton) {
+                this.textfield.setText(this.textfield.getText().concat("."));
+            }
 
-if (e.getSource() == this.equButton) {
-        try {
-        this.num2 = Double.parseDouble(this.textfield.getText());
+            if (e.getSource() == this.addButton) {
+                this.num1 = Double.parseDouble(this.textfield.getText());
+                this.operator = '+';
+                this.textfield.setText("");
+            }
+
+            if (e.getSource() == this.subButton) {
+                this.num1 = Double.parseDouble(this.textfield.getText());
+                this.operator = '-';
+                this.textfield.setText("");
+            }
+
+            if (e.getSource() == this.mulButton) {
+                this.num1 = Double.parseDouble(this.textfield.getText());
+                this.operator = '*';
+                this.textfield.setText("");
+            }
+
+            if (e.getSource() == this.divButton) {
+                this.num1 = Double.parseDouble(this.textfield.getText());
+                this.operator = '/';
+                this.textfield.setText("");
+            }
+
+            if (e.getSource() == this.powButton) {
+                this.num1 = Double.parseDouble(this.textfield.getText());
+                this.operator = '^';
+                this.textfield.setText("");
+            }
+
+
+
+            if (e.getSource() == this.equButton) {
+                try {
+                this.num2 = Double.parseDouble(this.textfield.getText());
         switch (this.operator) {
         case '*':
         this.result = this.num1 * this.num2;
@@ -207,43 +239,9 @@ if (e.getSource() == this.equButton) {
             } catch (ArithmeticException var9) {
         this.textfield.setText("Error");
             }
-                    }//
+                    }
 
-                    if (e.getSource() == this.decButton) {
-        this.textfield.setText(this.textfield.getText().concat("."));
-        }
 
-        if (e.getSource() == this.addButton) {
-        this.num1 = Double.parseDouble(this.textfield.getText());
-        this.operator = '+';
-        this.textfield.setText("");
-        }
-
-                if (e.getSource() == this.subButton) {
-        this.num1 = Double.parseDouble(this.textfield.getText());
-        this.operator = '-';
-        this.textfield.setText("");
-        }
-
-                if (e.getSource() == this.mulButton) {
-        this.num1 = Double.parseDouble(this.textfield.getText());
-        this.operator = '*';
-        this.textfield.setText("");
-        }
-
-                if (e.getSource() == this.divButton) {
-        this.num1 = Double.parseDouble(this.textfield.getText());
-        this.operator = '/';
-        this.textfield.setText("");
-        }
-
-                if (e.getSource() == this.powButton) {
-        this.num1 = Double.parseDouble(this.textfield.getText());
-        this.operator = '^';
-        this.textfield.setText("");
-        }
-
-                    }//
     if (e.getSource() == this.clrButton) {
         this.textfield.setText("");
         this.num1 = (double)0.0F;
