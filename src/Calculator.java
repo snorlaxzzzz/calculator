@@ -244,3 +244,29 @@ if (e.getSource() == this.equButton) {
         }
 
                     }//
+    if (e.getSource() == this.clrButton) {
+        this.textfield.setText("");
+        this.num1 = (double)0.0F;
+        this.num2 = (double)0.0F;
+        this.operator = ' ';
+    }
+
+
+    if (e.getSource() == this.delButton) {
+        String string = this.textfield.getText();
+        if (string.length() > 0) {
+            this.textfield.setText(string.substring(0, string.length() - 1));
+        }
+    }
+
+    if (e.getSource() == this.negButton) {
+        try {
+            double temp = Double.parseDouble(this.textfield.getText());
+            temp *= (double)-1.0F;
+            this.textfield.setText(String.valueOf(temp));
+        } catch (NumberFormatException var7) {
+        }
+    }
+
+}
+}
